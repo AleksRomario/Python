@@ -15,21 +15,6 @@ class Player:
 	'''
 	pass
 
-
-class GameRoundManager:
-	'''
-	Менеджер игры, запускающий все процессы 
-	'''
-	# игроки типа: Player не создаются менеджером, а передаются ему
-	def __init__(self, player1:Player, player2:Player): 
-		self.players = [player1, player2]
-	
-	# Главный loop игры 
-	def main_loop(self):
-		# Пока игра прожолжается 
-		while not game_over:
-			player = next_player() 
-
  
 class Player:
 	'''
@@ -46,7 +31,64 @@ class GameFieldView:
 	pass
 
 
+class GameRoundManager:
+	'''
+	Менеджер игры, запускающий все процессы 
+	'''
+	# игроки типа: Player не создаются менеджером, а передаются ему
+	def __init__(self, player1:Player, player2:Player):
+		# _players с подчеркиванием обозначает свойство не публичное
+		# оно явряется внутренним для GameRoundManager 
+		self._players = [player1, player2]
+		self._current_player = 0  
+		self._field = GameField()
+
+	def handle_click(self, event):
+		# если клик проишел 
+		if 
+
+		player = self._players[self.current_player] 
+		# игрок делает клик на поле
+			 
+
+
 class GameWindow:
-	pass
+	'''
+	Содержит в себе виджет поля, а так же менеджер игрового раунда
+	'''
+	def __init__(self):
+		# Инициализация pygame
+		self._field_widget = GameFieldView()
+		# инициализация GameManager, которому передаются игроки (2)
+		# Прописываем имена и за кого они играют не запоминая, а 
+		# используя локальные имена.
+		player1 = Player("Alex", Cell.CROSS)
+		player2 = Player("Mike", Cell.ZERO)
+		self._game_manager = GameRoundManager(player1, player2) 
+
+	
+	# Главный loop игры 
+	def main_loop(self):
+		finished = False
+		# Пока игра прожолжается 
+		while not finished:
+			# цикл событий
+			for event in pygame.get_events(...):
+				if event.type == pygame.QUIT:
+					finished = True
+				# проброс события если клик по полю
+				elif event.type == pygame.MOUSEBUTTONDOWN:
+					# передаются  координаты x, y в gameField (field_widget) и вытаскиваются i, j 
+					x, y = event.x, event.y
+					# определяем клик в окне ли или за его границами
+					if self._field_widget.check_coords_correct(x, y):
+						i, j = self._field_widget.get_coords(x, y)
+						self._game_manager.handle_click(x, y)
+					 	# LATEST 58:58   
+			
+ 
+
+
+
 
 
