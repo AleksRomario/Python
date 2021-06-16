@@ -1,4 +1,4 @@
-:#!/usr/bin/env python3
+#!/usr/bin/env python3
 # Based on freeCodeCamp.org video tutorial - Intermediate Python Programming Course
 
 

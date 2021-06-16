@@ -1,3 +1,6 @@
+
+
+
 # Grock the algorythms. Chapter 2 
 # Exercise 2, selection sort O(n*n)
 # need to test it (not finished script)
@@ -14,6 +17,10 @@ def find_smallest(arr):
             smallest = arr[i]
             smallest_index = i
     return smallest_index
+
+
+
+
 
 
 # selection sort
