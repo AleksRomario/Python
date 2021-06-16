@@ -73,8 +73,8 @@ class Isaac(pygame.sprite.Sprite):
 
         # try to see object attributes
         # print(dir(self.rect))
-        print(dir(self.image))
-        print(Isaac.__dict__)
+        # print(dir(self.image))
+        # print(Isaac.__dict__)
 
     def update(self):
         self.rect.x += 1
@@ -118,7 +118,6 @@ while running_game:
 
 pygame.quit()
 
-"""
+
 if __name__ == "__main__":
     print("started as main file")
-"""
