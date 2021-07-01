@@ -1,2 +1,2 @@
-01_Pygame sceleton 
+01_Pygame skeleton
 02.Working_with_sprites ---> as many images ----> as one sprite sheet
